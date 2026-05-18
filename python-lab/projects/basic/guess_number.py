@@ -7,7 +7,7 @@ def start():
     global magic_number, attempts
     magic_number = choose_difficulty()
     attempts = 0
-    print("----------------------------")
+    print(f"{'------------------------------': ^10}")
     print("Guess the magic number")
     print("Try to guess the number in as few attempts as possible.")
 def choose_difficulty():
