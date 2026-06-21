@@ -1,5 +1,6 @@
 from numbers import Number
 from math import sqrt
+from math import trunc
 from datetime import datetime
 
 # an empty list to store history data
@@ -8,10 +9,10 @@ history = []
 """ A function that analyze the number 
 and save the resutls into history list """
 def analyze(num):
-    root = sqrt(num) if num >= 0 else "No Real Root"
-    if isinstance(root, float) and root.is_integer():
-        root = int(root)
-    elif not isinstance(num, Number):
+    root = trunc(sqrt(num))
+    #if isinstance(root, float) and root.is_integer():
+        #root = int(root)
+    if not isinstance(num, Number):
         return "Not Number"
     result = {
         "number": num,
