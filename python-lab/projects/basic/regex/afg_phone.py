@@ -1,13 +1,13 @@
 import re
 PhoneNum = input("Enter your Number with Country code :")
-pattern = re.compile(r"^(?:0093|\+93)(7[1-9])\d{7}$")
+pattern = re.compile(r"(?:0093|\+93|0)[ -]?(7[1-9])[ -]?\d{3}[ -]?\d{4}")
 operators = {
     "78": {"name": "Etisalat", "Price": 250},
     "79": {"name": "Roshan", "Price": 100},
     "76": {"name": "MTN", "Price": 58}
 }
 
-match = pattern.match(PhoneNum)
+match = pattern.search(PhoneNum)
 
 if match:
     code = match.group(1)
